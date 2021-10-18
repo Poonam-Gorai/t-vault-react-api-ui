@@ -1,0 +1,108 @@
+.right-container {
+  width: 60%;
+  position: relative;
+  background-image: linear-gradient(to bottom, #151820 50%, #2c3040);
+}
+.image-container{
+  background-image: url('../../assets/Banner.png');
+  height: 30%;
+  width: 100%;
+  background-size: cover;
+  position:absolute;
+  top: -10px;
+}
+.safe-Content{
+ width: 70%;
+ margin-right: 0px;
+ margin-left: auto;
+ padding: 1.5rem;
+}
+.Sample {
+  font-size: 24px;
+  font-weight: 500;
+  color: #fff;
+  position: relative;
+}
+.content {
+  margin: 13px 0 0;
+  font-family: Helvetica;
+  font-size: 14px;
+  line-height: 1.29;
+  color: #c4c4c4;
+}
+.secret-content{
+  margin: 0 1rem;
+  height: 70%;
+  width: 95%;
+  position: absolute;
+ bottom: 0;
+}
+.secrets {
+  display: flex;
+  justify-content: space-between;
+}
+.secrets li {
+  text-decoration: none;
+  color: #fff;
+  list-style: none;
+  padding: 15px 30px;
+}
+.line {
+  height: 3px;
+  background-color: #222632;
+}
+.image2{
+  width: 8rem;
+  height: 8rem;
+  margin: 1rem;
+}
+.img-content{
+  
+  top: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  left: 9rem;
+  position: absolute;
+}
+.secrets li:hover {
+cursor: pointer;
+background-image: linear-gradient(to top, #72134b, #1d212c);
+}
+.right-content {
+  font-family: Helvetica;
+  font-size: 14px;
+  color: rgb(110, 73, 105);
+  margin: 1rem;
+  
+}
+
+.right-content .text-style-2 {
+  font-weight: bold;
+  color: #f2f2f2;
+}
+.addButton{
+  width: 5rem;
+  padding: .5rem;
+  background-color: deeppink;
+  color: #fff;
+  margin: 1rem;
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+
+.right-card{
+  color: ghostwhite;
+  padding: 1rem;
+  font-family: Roboto;
+  font-size: 16px;
+  }
+  .img-content-none{
+    display: none;
+  }
+  .safe-Content2{
+    margin-left: 11rem;
+    padding: 2.5rem 5rem;
+  }

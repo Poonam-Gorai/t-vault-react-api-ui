@@ -1,0 +1,18 @@
+.right-card{
+    display: flex;
+    align-items: center;
+    background-color: #1c1f29;
+    padding: .5rem;
+    margin: .5rem 0;
+    
+    display: flex;
+    align-items: center;
+    }
+    .right-card:hover,.right-card:active{
+      background-image: linear-gradient(to right, #72134b, #1d212c);
+      cursor: pointer;
+    }
+  .right-card-details{
+    color: ghostwhite;
+    padding: 1rem;
+  }

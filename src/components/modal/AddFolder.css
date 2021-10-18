@@ -1,0 +1,65 @@
+.addFolder {
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    background-color: #2a2e3e;
+    padding: 3rem;
+    text-align: center;
+    width: 40rem;
+    z-index: 10;
+    position: fixed;
+    top: 27vh;
+    left: calc(40% - 10rem);
+    bottom: 27vh;
+  }
+  .addFolder-content {
+    display: flex;
+    flex-direction: column;
+  }
+  .addFolder-Safename {
+    text-align: left;
+    font-size: 16px;
+    color: white;
+    margin: 0.5rem 0 2rem 0.5rem;
+  }
+  .addFolder-Safe {
+    margin: 0.5rem;
+    padding: 0.5rem;
+    border: none;
+    outline: none;
+    text-decoration: none;
+  }
+  .addFolder-btn-cancle {
+    color: deeppink;
+    align-items: center;
+    margin: 3rem .5rem;
+    padding: 0.5rem 1.5rem;
+    background-color: white;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .addFolder-btn-create {
+    color: white;
+    align-items: center;
+    margin: 3rem .5rem;
+    padding: 0.5rem 1.5rem;
+    background-color: deeppink;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .addFolder-btn {
+    display: flex;
+    justify-content: flex-end;
+  }
+  p{
+    color: #8b8ea6;
+    font-family: Helvetica;
+    font-size: 13px;
+
+  }
+  .folder-name{
+    text-align: left;
+    margin-left: 8px;
+  }

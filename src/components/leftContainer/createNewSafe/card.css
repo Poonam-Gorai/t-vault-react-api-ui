@@ -1,0 +1,39 @@
+.card{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border-bottom: #2a2e3e solid 1px;
+    justify-content: space-between;
+    }
+  .card:hover,.card:active{
+    background-image: linear-gradient(to right, #72134b, #1d212c);
+  }
+  .card-details{
+    color: ghostwhite;
+  }
+  .details{
+    color: white;
+    font-size: 10px;
+  }
+  .card-det{
+    display: flex;
+    flex-direction: column;
+  }
+.rightcard{
+  display: flex;
+  margin: 1rem;
+  align-items: center;
+}
+.img-cont{
+  display: flex;
+  align-items: center;
+}
+.icon{
+  cursor: pointer;
+}
+.img-icon{
+height:2.5rem;
+width: 2.3rem;
+margin: 1rem;
+cursor: pointer;
+}
