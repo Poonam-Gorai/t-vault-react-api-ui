@@ -15,5 +15,10 @@ export const deleteItem = (index) => ({
         type: "EDIT_ITEM",
          payload: {safeDetails,index}
         };
+
  };
+ export const reLoadsafe = (status) => ({
+    type: "SET_RELOADING",
+     payload: status,
+});
 

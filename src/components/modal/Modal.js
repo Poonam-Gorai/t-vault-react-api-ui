@@ -3,7 +3,7 @@ import "./Modal.css";
 import api from "../../api/api";
 import { useDispatch } from "react-redux";
 import { createSafe } from "../../redux/createSafe/createSafe.action";
-
+import {reLoadsafe} from'../../redux/createSafe/createSafe.action';
 function Modal(props) {
   const dispatch = useDispatch();
 
@@ -52,7 +52,12 @@ function Modal(props) {
           type: enteredType,
           description: enteredDescription,
         })
-        .then(console.log("sucess"))
+        .then((result) => {
+          console.log("success", result);
+
+          dispatch(reLoadsafe(false))
+          console.log(reLoadsafe)
+        })
         .catch((error) => {
           console.log(error.responce);
         })

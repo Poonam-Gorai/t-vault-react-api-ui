@@ -3,7 +3,9 @@ import {useDispatch } from "react-redux";
 import React from "react";
 import Card from "./card";
 import {deleteItem} from '../../../redux/createSafe/createSafe.action';
+import {reLoadsafe} from'../../../redux/createSafe/createSafe.action';
 import { useEffect } from "react";
+import api from "../../../api/api";
 
 
 function CreateNewSafe({ setSelectedSafe, setcurrentIndex,setAddButtonDisable,setsafeListLength,safeData}) {
@@ -26,7 +28,16 @@ function CreateNewSafe({ setSelectedSafe, setcurrentIndex,setAddButtonDisable,se
     setAddButtonDisable((prevState) => !prevState);
   };
  const onDelete = (index) => {
-  dispatch(deleteItem(index));
+  //dispatch(deleteItem(index));
+  api
+  .delete(`/${index}`)
+  .then(result =>{
+    dispatch(reLoadsafe(false))
+  })
+  .catch((error) => {
+    console.log(error.responce);
+  })
+  
  }
   return (
     <>

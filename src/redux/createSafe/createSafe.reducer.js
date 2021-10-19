@@ -1,10 +1,12 @@
 
 const INITIAL_STATE = {
     safes:[],
+    isReloaded:true
 };
 
 
 const createSafeReducer =  (state = INITIAL_STATE,action) =>{
+    
     switch(action.type) {
        
         case "SET_CREATE_SAFE":
@@ -23,6 +25,11 @@ const createSafeReducer =  (state = INITIAL_STATE,action) =>{
             return{
                 ...state,
                 safes:newSafes
+            }
+        case "SET_RELOADING":
+            return{
+                ...state,
+                isReloaded:action.payload
             }
             default:
                 return state;

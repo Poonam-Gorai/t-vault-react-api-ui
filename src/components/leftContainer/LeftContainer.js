@@ -3,10 +3,12 @@ import "./LeftContainerHeader.css";
 import Button from "../button/Button";
 import Group from "../../assets/Group_safe.png";
 import "../search/Search.css";
-
+import { useDispatch } from "react-redux";
 import CreateNewSafe from "./createNewSafe/CreateNewSafe";
 import { useSelector } from "react-redux";
-import { useState,useRef,useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
+import api from "../../api/api";
+import {reLoadsafe} from'../../redux/createSafe/createSafe.action';
 
 function LeftContainer({
   setAddButtonDisable,
@@ -14,25 +16,43 @@ function LeftContainer({
   setcurrentIndex,
   setSafeListName,
 }) {
-  const safeList = useSelector((state) => state.createSafe.safes);
+  //const safeList = useSelector((state) => state.createSafe.safes);
+  const [safeList, setSafeList] = useState([]);
+  const [loading, setloading] = useState(true);
+  const isReloaded = useSelector((state) => state.createSafe.isReloaded);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    console.log("use effect working",isReloaded);
+    setloading(true);
+    api
+      .get("/")
+      .then((result) => {
+        console.log("success", result);
+        dispatch(reLoadsafe(true))
+        setloading(false);
+        setSafeList(result.data);
+      })
+      .catch((error) => {
+        console.log(error.responce);
+      });
+  }, [isReloaded]);
+
   const [searchTerm, setSearchTerm] = useState("");
   const inputRef = useRef("");
   const [safeData, setSafeData] = useState([]);
   const [safeListLength, setsafeListLength] = useState({});
   setSafeListName(safeListLength);
 
-  
   // const [safeLength, setsafeLength] = useState({});
   // setSafeListName(safeLength);
   // //console.log(safeLength);
   useEffect(() => {
-    setSafeData([...safeList])
+    setSafeData([...safeList]);
   }, [safeList]);
-  
 
   const filterSafe = () => {
     const searchText = inputRef?.current.value;
-    console.log(searchText)
+    console.log(searchText);
     setSearchTerm(searchText);
     if (searchText !== "") {
       const newAllSafes = safeData.filter((item) => {
@@ -43,7 +63,7 @@ function LeftContainer({
     } else {
       setSafeData([...safeList]);
     }
-  }
+  };
 
   console.log(safeListLength);
   return (
@@ -61,22 +81,25 @@ function LeftContainer({
       </header>
       <div className="left-container">
         <div className="safelist">
-          <CreateNewSafe
-            setAddButtonDisable={setAddButtonDisable}
-            setSelectedSafe={setSelectedSafe}
-            setcurrentIndex={setcurrentIndex}
-            setsafeListLength={setsafeListLength}
-            safeData={safeData}
-          />
+          {loading && <div>loading safe</div>}
+          {!loading && (
+            <CreateNewSafe
+              setAddButtonDisable={setAddButtonDisable}
+              setSelectedSafe={setSelectedSafe}
+              setcurrentIndex={setcurrentIndex}
+              setsafeListLength={setsafeListLength}
+              safeData={safeData}
+            />
+          )}
         </div>
-        {safeListLength.length === 0 && (
+        {safeData.length === 0 && (
           <>
             <img src={Group} className="Group" alt="groupimg" />
-            <Button />
+            <Button safeData={safeData} />
           </>
         )}
 
-        {safeListLength.length !== 0 && (
+        {safeData.length !== 0 && (
           <>
             <img src={Group} className="Group_none" alt="groupimg" />
             <Button />

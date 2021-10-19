@@ -1,14 +1,14 @@
 .modal {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
   background-color: #2a2e3e;
-  padding: 3rem;
+  padding: 2rem;
   text-align: center;
   width: 40rem;
   z-index: 10;
   position: fixed;
-  top: 8vh;
+  top: 7vh;
   left: calc(40% - 10rem);
-  bottom: 8vh;
+  bottom: 6vh;
 }
 .create {
   font-weight: bold;
