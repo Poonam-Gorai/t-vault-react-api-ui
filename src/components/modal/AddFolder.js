@@ -1,21 +1,34 @@
 import React from "react";
 import './AddFolder.css';
 import { useSelector } from "react-redux";
+import api from "../../api/api";
+import { useDispatch } from "react-redux";
+import {reLoadsafe} from'../../redux/createSafe/createSafe.action';
 
-const AddFolder = ({ setshowAddFolder,name,handleSetName,currentIndex }) => {
+const AddFolder = ({ setshowAddFolder,name,selectedSafe,handleSetName,currentIndex }) => {
 
   const safeList = useSelector((state) => state.createSafe.safes);
   const secrets = safeList[currentIndex]?.secrets;
   //console.log("StfeList",safeList[0].secrets);
-
-
+  const dispatch = useDispatch();
+  console.log(selectedSafe._id)
   const closeAddForm = () => {
     setshowAddFolder((prev) => !prev);
     
   };
   const saveForm = () => {
-    console.log("str",name);
-    
+  //console.log("str",name);
+    api
+    .patch(`/secrets/${selectedSafe._id}`, {secrets:name})
+    .then((result) => {
+      console.log("success", result);
+      dispatch(reLoadsafe(false))
+      console.log(reLoadsafe)
+    })
+    .catch((error) => {
+      console.log(error.response);
+    })
+
     if (!name) {
       return alert("Please fill in all the fileds!");
       //return toast.warn("Please fill in all the fileds!");
@@ -24,7 +37,7 @@ const AddFolder = ({ setshowAddFolder,name,handleSetName,currentIndex }) => {
     secrets?.push(name)
     handleSetName(" ");
 
-    
+  
   };
 
   return (

@@ -3,6 +3,8 @@ import "./Modal.css";
 import { useRef } from "react";
 import { useDispatch } from "react-redux";
 import { EditItem } from "../../redux/createSafe/createSafe.action";
+import api from "../../api/api";
+import {reLoadsafe} from'../../redux/createSafe/createSafe.action';
 
 const EditModel = ({ onCancel, index, safe }) => {
   const dispatch = useDispatch();
@@ -13,7 +15,7 @@ const EditModel = ({ onCancel, index, safe }) => {
   const descriptionInputRef = useRef();
 
   console.log("editModel", index);
-  console.log(safe);
+  console.log(safe._id);
 
   const editSafe = (newSafe) => {
     dispatch(EditItem(newSafe, index));
@@ -49,6 +51,24 @@ const EditModel = ({ onCancel, index, safe }) => {
       secrets: prevScrets,
     };
     editSafe(newSafe);
+    api
+      .patch(`/${safe._id}`, {
+        safename: enteredSafeName,
+        owner: enteredOwner,
+        type: enteredType,
+        description: enteredDescription,
+      })
+      .then((result) => {
+        console.log("success", result);
+        dispatch(reLoadsafe(false));
+        //console.log(reLoadsafe);
+      })
+      .catch(function (error) {
+        console.log(error.response.data.message.code);
+        if (error.response.data.message.code === 11000) {
+          alert("Safe Name Already Exist!!")
+        }
+      });
   }
 
   return (

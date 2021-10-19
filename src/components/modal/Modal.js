@@ -3,7 +3,7 @@ import "./Modal.css";
 import api from "../../api/api";
 import { useDispatch } from "react-redux";
 import { createSafe } from "../../redux/createSafe/createSafe.action";
-import {reLoadsafe} from'../../redux/createSafe/createSafe.action';
+import { reLoadsafe } from "../../redux/createSafe/createSafe.action";
 function Modal(props) {
   const dispatch = useDispatch();
 
@@ -45,22 +45,25 @@ function Modal(props) {
     //console.log(modalData);
 
     //dispatch(createSafe(modalData));
-      api
-        .post("/", {
-          safename: enteredSafeName,
-          owner: enteredOwner,
-          type: enteredType,
-          description: enteredDescription,
-        })
-        .then((result) => {
-          console.log("success", result);
+    api
+      .post("/", {
+        safename: enteredSafeName,
+        owner: enteredOwner,
+        type: enteredType,
+        description: enteredDescription,
+      })
+      .then((result) => {
+        console.log("success", result);
 
-          dispatch(reLoadsafe(false))
-          console.log(reLoadsafe)
-        })
-        .catch((error) => {
-          console.log(error.responce);
-        })
+        dispatch(reLoadsafe(false));
+        console.log(reLoadsafe);
+      })
+      .catch(function (error) {
+        console.log(error.response.data.message.code);
+        if (error.response.data.message.code === 11000) {
+          alert("Safe Name Already Exist!!")
+        }
+      });
     cancleHandler();
   }
 

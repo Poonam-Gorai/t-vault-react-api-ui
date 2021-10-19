@@ -18,16 +18,16 @@ function RightContainer({
   const [name, setName] = useState("");
   const safeList = useSelector((state) => state.createSafe.safes);
   //console.log(safeListName);
-  //console.log(safeList);
+  console.log(selectedSafe);
   let Indexvalue = safeList[currentIndex];
 
   console.log(Indexvalue);
 
   let secrets;
-  if (safeList.length === 0) {
+  if (selectedSafe.length === 0) {
     secrets = [];
   } else {
-    secrets = safeList[currentIndex]?.secrets;
+    secrets = selectedSafe.secrets;
   }
   function closeModalHandler() {
     setshowAddFolder(false);
@@ -70,9 +70,9 @@ function RightContainer({
             )}
             {safeListName?.length !== 0 && (
               <><div className="safe-Content2">
-                <span className="Sample">{Indexvalue?.safename}</span>
+                <span className="Sample">{selectedSafe?.safename}/{selectedSafe?.owner}</span>
                 <p className="content">
-                  {Indexvalue?.description}
+                  {selectedSafe?.description}
                 </p></div>
               </>
             )}

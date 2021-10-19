@@ -11,7 +11,7 @@ function SafesContainer( ) {
   const [currentIndex, setcurrentIndex] = useState(0)
   const[safeListName,setSafeListName] = useState({});
   console.log(safeListName);
-
+console.log(selectedSafe);
   // const safeList = useSelector((state) => state.createSafe.safes);
   // console.log("StfeList",safeList[0].secrets);
   return (
