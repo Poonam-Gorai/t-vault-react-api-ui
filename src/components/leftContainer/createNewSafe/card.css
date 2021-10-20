@@ -5,7 +5,10 @@
     border-bottom: #2a2e3e solid 1px;
     justify-content: space-between;
     }
-  .card:hover,.card:active{
+  .card:hover{
+    background-image: linear-gradient(to right, #72134b, #1d212c);
+  }
+  .card-active{
     background-image: linear-gradient(to right, #72134b, #1d212c);
   }
   .card-details{

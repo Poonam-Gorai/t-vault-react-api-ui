@@ -6,7 +6,7 @@ import deleteImage from "../../../assets/delete.png";
 import editImage from "../../../assets/edit.png";
 
 function Card(props) {
-  const { safe, handelClick, onDelete, index } = props;
+  const { safe, handelClick, onDelete, index,isactive } = props;
   //console.log(safe.index);
   const [modalIsOpen, setModalIsOpen] = React.useState(false);
 
@@ -21,7 +21,7 @@ function Card(props) {
   console.log(handelClick.index);
   return (
     <div
-      className="card "
+      className={`card ${isactive}`}
       onClick={() => {
         handelClick(safe, index);
       }}

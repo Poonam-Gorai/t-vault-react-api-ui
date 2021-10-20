@@ -42,7 +42,7 @@ const EditModel = ({ onCancel, index, safe }) => {
 
     const { secrets } = safe;
 
-    let prevScrets = secrets.length !== 0 ? secrets : [];
+    let prevScrets = secrets?.length !== 0 ? secrets : [];
     const newSafe = {
       safename: enteredSafeName,
       owner: enteredOwner,

@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import React from "react";
+import React, { useState } from "react";
 import Card from "./card";
 import { deleteItem } from "../../../redux/createSafe/createSafe.action";
 import { reLoadsafe } from "../../../redux/createSafe/createSafe.action";
@@ -14,9 +14,9 @@ function CreateNewSafe({
   safeData,
 }) {
   //const safeList = useSelector((state) => state.createSafe.safes);
-
+const[activeSafeId,setactiveSafeId] = useState(0);
   //console.log(safeList);
-  console.log(safeData);
+  console.log("current index value ",activeSafeId);
 
   const dispatch = useDispatch();
   setsafeListLength(safeData);
@@ -28,6 +28,7 @@ function CreateNewSafe({
   }, [safeData]);
 
   const handelClick = (safe, index) => {
+    setactiveSafeId(index)
     setcurrentIndex(index);
     setSelectedSafe(safe);
     setAddButtonDisable((prevState) => !prevState);
@@ -48,6 +49,7 @@ function CreateNewSafe({
     <>
       {safeData.length > 0 &&
         safeData.map((safe, index) => {
+          let isactive = index === activeSafeId?"card-active" :false;
           return (
             <Card
               key={index}
@@ -55,6 +57,7 @@ function CreateNewSafe({
               safe={safe}
               index={index}
               onDelete={() => onDelete(safe._id)}
+              isactive={isactive}
             />
           );
         })}
