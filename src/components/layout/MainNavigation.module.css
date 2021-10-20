@@ -27,6 +27,7 @@
   font-weight: bold;
   padding: 1.45rem .5rem;
   text-align: center;
+  min-width: 6rem;
 }
 .header li:hover
  {

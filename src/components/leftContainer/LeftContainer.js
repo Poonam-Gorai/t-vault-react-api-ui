@@ -2,13 +2,14 @@ import "./LeftContainer.css";
 import "./LeftContainerHeader.css";
 import Button from "../button/Button";
 import Group from "../../assets/Group_safe.png";
+import Loader from "../../assets/loading.gif";
 import "../search/Search.css";
 import { useDispatch } from "react-redux";
 import CreateNewSafe from "./createNewSafe/CreateNewSafe";
 import { useSelector } from "react-redux";
 import { useState, useRef, useEffect } from "react";
 import api from "../../api/api";
-import {reLoadsafe} from'../../redux/createSafe/createSafe.action';
+import { reLoadsafe } from "../../redux/createSafe/createSafe.action";
 
 function LeftContainer({
   setAddButtonDisable,
@@ -22,13 +23,13 @@ function LeftContainer({
   const isReloaded = useSelector((state) => state.createSafe.isReloaded);
   const dispatch = useDispatch();
   useEffect(() => {
-    console.log("use effect working",isReloaded);
+    console.log("use effect working", isReloaded);
     setloading(true);
     api
       .get("/")
       .then((result) => {
         console.log("success", result);
-        dispatch(reLoadsafe(true))
+        dispatch(reLoadsafe(true));
         setloading(false);
         setSafeList(result.data);
       })
@@ -81,7 +82,7 @@ function LeftContainer({
       </header>
       <div className="left-container">
         <div className="safelist">
-          {loading && <div>loading safe</div>}
+          {loading && <div className="container-loading"><div className="loading"></div></div>}
           {!loading && (
             <CreateNewSafe
               setAddButtonDisable={setAddButtonDisable}

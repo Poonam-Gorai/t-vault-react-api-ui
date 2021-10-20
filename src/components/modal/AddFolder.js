@@ -34,7 +34,7 @@ const AddFolder = ({ setshowAddFolder,name,selectedSafe,handleSetName,currentInd
       //return toast.warn("Please fill in all the fileds!");
     }
     setshowAddFolder((prev) => !prev);
-    secrets?.push(name)
+   // secrets?.push(name)
     handleSetName(" ");
 
   
