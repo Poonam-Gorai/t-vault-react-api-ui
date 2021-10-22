@@ -1,15 +1,16 @@
 .right-container {
   width: 60%;
-  position: relative;
+  height: 100%;
   background-image: linear-gradient(to bottom, #151820 50%, #2c3040);
 }
 .image-container{
   background-image: url('../../assets/Banner.png');
-  height: 30%;
-  width: 100%;
-  background-size: cover;
-  position:absolute;
-  top: -7px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 12rem;
+  top: -3px;
+  margin: -0.19rem 0 0 0;
+  position: relative;
 }
 .safe-Content{
  width: 70%;
@@ -18,7 +19,7 @@
  padding: 1rem;
 }
 .Sample {
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 500;
   color: #fff;
   position: relative;
@@ -26,54 +27,56 @@
 .content {
   margin: 13px 0 0;
   font-family: Helvetica;
-  font-size: 14px;
+  font-size: .875rem;
   line-height: 1.29;
   color: #c4c4c4;
 }
 .secret-content{
   margin: 0 1rem;
-  height: 70%;
+  height: calc(100% - 12rem);
   width: 95%;
-  position: absolute;
- bottom: 0;
+
+}
+.All_secrets::-webkit-scrollbar {
+  display: none;
+}
+.All_secrets{
+height: calc(100% - 5rem);
+overflow-y: scroll;
 }
 .secrets {
   display: flex;
   justify-content: space-between;
+  padding: 1rem;
 }
 .secrets li {
   text-decoration: none;
   color: #fff;
   list-style: none;
-  padding: 15px 30px;
 }
 .line {
   height: 3px;
   background-color: #222632;
 }
 .image2{
-  width: 6rem;
-  height: 6rem;
-  margin: 1rem;
+  width: 10rem;
+  height: 10rem;
 }
 .img-content{
-  
-  top: 4rem;
+  overflow: auto;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  left: 9rem;
-  position: absolute;
+  justify-content: space-evenly;
 }
 .secrets li:hover {
 cursor: pointer;
-background-image: linear-gradient(to top, #72134b, #1d212c);
 }
 .right-content {
   font-family: Helvetica;
-  font-size: 14px;
+  font-size: .875rem;
   color: rgb(110, 73, 105);
-  margin: 1rem;
   
 }
 
@@ -84,9 +87,8 @@ background-image: linear-gradient(to top, #72134b, #1d212c);
 .addButton{
   width: 5rem;
   padding: .5rem;
-  background-color: deeppink;
+  background-color: #454c5e;
   color: #fff;
-  margin: 1rem;
   cursor: pointer;
   outline: none;
   border: none;
@@ -97,12 +99,17 @@ background-image: linear-gradient(to top, #72134b, #1d212c);
   color: ghostwhite;
   padding: 1rem;
   font-family: Roboto;
-  font-size: 16px;
+  font-size: 1rem;
   }
   .img-content-none{
     display: none;
   }
   .safe-Content2{
-    margin-left: 11rem;
-    padding: 2.5rem 5rem;
+    position: absolute;
+    top: 2rem;
+    left: 18.2rem;
+    width: 250px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: white;
   }

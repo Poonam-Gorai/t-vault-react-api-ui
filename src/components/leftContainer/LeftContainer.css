@@ -1,6 +1,10 @@
 .left-container {
   position: relative;
-  height: 90%;
+  height: calc(100% - 4rem);
+  overflow-y: scroll;
+}
+.left-container::-webkit-scrollbar {
+  display: none;
 }
 
 .Group
@@ -15,6 +19,7 @@
 }
 .left-img-content{
   width: 40%;
+  height: 100%;
   background-color: #151820;
   flex-direction: column;
   justify-content: space-between;

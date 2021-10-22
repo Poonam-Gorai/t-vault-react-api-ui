@@ -24,7 +24,7 @@ function MainNavigation() {
         <ul>
          {menuList}
         </ul>
-        <ul className='right'>
+        <ul className={classes.right}>
           <li>Documentation</li>
           <li>(Admin) Davis R.</li>
         </ul>

@@ -41,13 +41,13 @@ function Card(props) {
         <img
           src={editImage}
           onClick={openEditModel}
-          className="icon"
+          className="icon-img"
           alt={"img"}
         ></img>
         <img
           src={deleteImage}
           onClick={() => onDelete(index)}
-          className="icon"
+          className="icon-img"
           alt={"img"}
         ></img>
       </div>

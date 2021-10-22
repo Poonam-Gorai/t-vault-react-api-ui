@@ -2,6 +2,7 @@
     display: flex;
     align-items: center;
     cursor: pointer;
+    padding: 1rem 1.5rem;
     border-bottom: #2a2e3e solid 1px;
     justify-content: space-between;
     }
@@ -13,30 +14,34 @@
   }
   .card-details{
     color: ghostwhite;
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .details{
     color: white;
-    font-size: 10px;
+    font-size: .625rem;
   }
   .card-det{
     display: flex;
+    margin-left: 1rem;
     flex-direction: column;
+    width: 150px;
   }
 .rightcard{
   display: flex;
-  margin: 1rem;
   align-items: center;
 }
 .img-cont{
   display: flex;
   align-items: center;
 }
-.icon{
+.icon-img{
+  margin: 0 1rem;
   cursor: pointer;
 }
 .img-icon{
 height:2.5rem;
 width: 2.3rem;
-margin: 1rem;
 cursor: pointer;
 }

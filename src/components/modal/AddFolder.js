@@ -17,7 +17,9 @@ const AddFolder = ({ setshowAddFolder,name,selectedSafe,handleSetName,currentInd
     
   };
   const saveForm = () => {
-  //console.log("str",name);
+    console.log("str",name);
+    console.log("secrets",secrets);
+  
     api
     .patch(`/secrets/${selectedSafe._id}`, {secrets:name})
     .then((result) => {
@@ -28,18 +30,18 @@ const AddFolder = ({ setshowAddFolder,name,selectedSafe,handleSetName,currentInd
     .catch((error) => {
       console.log(error.response);
     })
-
-    if (!name) {
-      return alert("Please fill in all the fileds!");
-      //return toast.warn("Please fill in all the fileds!");
-    }
+    
     setshowAddFolder((prev) => !prev);
    // secrets?.push(name)
     handleSetName(" ");
-
+    
   
   };
+  const validateSecretsForm = () => {
+    if (/^[a-z0-9_ ]*$/.test(name)) return true;
 
+    return false;
+  };
   return (
     <div className="addFolder">
       <div className="addFolder-content">
@@ -61,9 +63,18 @@ const AddFolder = ({ setshowAddFolder,name,selectedSafe,handleSetName,currentInd
           <button className="addFolder-btn-cancle" onClick={closeAddForm}>
             Cancel
           </button>
-          <button className="addFolder-btn-create" onClick={saveForm}>
+          <button className="addFolder-btn-create" onClick={(e) => {
+            e.preventDefault();
+            if (validateSecretsForm()) saveForm(e);
+            else {
+              alert("Enter lowercase number only");
+            }
+          }}>
             Save
           </button>
+          {/* <button className="addFolder-btn-create" onClick={saveForm}>
+            Save
+          </button> */}
         </div>
       </div>
     </div>

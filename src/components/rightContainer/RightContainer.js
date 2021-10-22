@@ -5,6 +5,7 @@ import AddFolder from "../modal/AddFolder";
 import RightCard from "./rightCard/rightCard";
 import { useSelector } from "react-redux";
 import Backdrop from "../backdrop/Backdrop";
+import Folder from "../../assets/folder.png"
 
 function RightContainer({
   AddButtonDisable,
@@ -70,7 +71,7 @@ function RightContainer({
             )}
             {safeListName?.length !== 0 && (
               <><div className="safe-Content2">
-                <span className="Sample">{selectedSafe?.safename}/{selectedSafe?.owner}</span>
+                <span className="Sample">{selectedSafe?.safename}</span>
                 <p className="content">
                   {selectedSafe?.description}
                 </p></div>
@@ -83,14 +84,19 @@ function RightContainer({
             <li>Secrets</li>
             <li disabled={AddButtonDisable} onClick={() => handelClick()}>
               {" "}
-              Add Folder
+              <img
+                src={Folder}
+                alt="folder"
+              ></img>
             </li>
           </ul>
           <div className="line"></div>
+          <div className="All_secrets">
           {/* <div className="right-card">{name}</div> */}
           {secrets?.map((secret, index) => {
             return <RightCard name={secret} key={index} />;
           })}
+          
           {secrets?.length === 0 && (
             <div className="img-content">
               <img
@@ -113,7 +119,7 @@ function RightContainer({
                 + Add
               </button>
             </div>
-          )}
+          )}</div>
           {secrets?.length !== 0 && (
             <div className="img-content-none">
               <img
