@@ -4,6 +4,7 @@
     width: 50%;
     outline: none;
     border: none;
+    padding: 1rem;
 }
 .search-box{
     background: #20232e;
