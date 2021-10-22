@@ -48,6 +48,7 @@ overflow-y: scroll;
   display: flex;
   justify-content: space-between;
   padding: 1rem;
+  align-items: center;
 }
 .secrets li {
   text-decoration: none;

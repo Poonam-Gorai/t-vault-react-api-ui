@@ -1,11 +1,11 @@
 import "./Search.css";
 import React from "react";
-import Search from "../../assets/icon_search.png";
+import SearchIcon from "../../assets/icon_search.png";
 
 function Search({ searchQuery, onQuery }) {
   return (
     <div className="search-box">
-      <img src={Search} alt="search" className="search-icon" />
+      <img src={SearchIcon} alt="search" className="search-icon" />
       <input
         type="text"
         placeholder="&nbsp;Search.."
