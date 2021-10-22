@@ -38,18 +38,20 @@ function Card(props) {
         </div>
       </div>
       <div className="rightcard">
+        <span className="edit-icon">
         <img
           src={editImage}
           onClick={openEditModel}
           className="icon-img"
           alt={"img"}
-        ></img>
+        ></img></span>
+        <span className="edit-icon">
         <img
           src={deleteImage}
           onClick={() => onDelete(index)}
           className="icon-img"
           alt={"img"}
-        ></img>
+        ></img></span>
       </div>
       {modalIsOpen && (
         <EditModel

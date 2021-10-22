@@ -37,11 +37,20 @@
   align-items: center;
 }
 .icon-img{
-  margin: 0 1rem;
   cursor: pointer;
 }
 .img-icon{
 height:2.5rem;
 width: 2.3rem;
 cursor: pointer;
+}
+.edit-icon{
+  padding: .8rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+}
+.edit-icon:hover{
+  border-radius: 50%;
+  background: rgba(90, 99, 122, 0.2);
 }
