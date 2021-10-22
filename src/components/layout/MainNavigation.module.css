@@ -7,7 +7,9 @@
   box-shadow: 0 5px 25px 0 rgba(226, 0, 116, 0.5);
   background-color: #151820;
 }
-
+.head_logo{
+  cursor: pointer;
+}
 .header ul {
   list-style: none;
   display: flex;

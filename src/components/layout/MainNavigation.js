@@ -19,7 +19,8 @@ function MainNavigation() {
 
   return (
     <header className={classes.header}>
-      <img src={logo} alt="logo"></img>
+      <a  className="head_logo" href="/safes">
+      <img src={logo} alt="logo"></img></a>
       <nav>
         <ul>
          {menuList}

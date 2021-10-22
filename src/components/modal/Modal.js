@@ -30,11 +30,14 @@ function Modal(props) {
       !enteredSafeName ||
       !enteredOwner ||
       !enteredType ||
-      !enteredDescription
+      !enteredDescription 
     ) {
-      return alert("Please fill in all the fileds!");
-      //return toast.warn("Please fill in all the fileds!");
+      return alert("Please fill in all the feilds!");
+    } 
+   else if (enteredDescription.length < 10) {
+      return alert("Please enter 10 characters");
     }
+    
     const modalData = {
       safename: enteredSafeName,
       owner: enteredOwner,
@@ -61,7 +64,7 @@ function Modal(props) {
       .catch(function (error) {
         console.log(error.response.data.message.code);
         if (error.response.data.message.code === 11000) {
-          alert("Safe Name Already Exist!!")
+          alert("Safe Name Already Exist!!");
         }
       });
     cancleHandler();

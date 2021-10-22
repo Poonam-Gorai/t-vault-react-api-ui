@@ -3,6 +3,7 @@
   border-radius: 50%;
   border: none;
   background-image: linear-gradient(to top, #ff61b2, #e20074, #650038);
+  cursor: pointer;
 }
 .plus {
   color: white;

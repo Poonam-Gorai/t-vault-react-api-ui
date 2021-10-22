@@ -1,12 +1,10 @@
 .right-card{
     display: flex;
     align-items: center;
-    background-color: #1c1f29;
-    padding: .5rem;
-    margin: .5rem 0;
+    background-color: #151820;
+    border-bottom: solid 1px #2a2e3e;
+
     
-    display: flex;
-    align-items: center;
     }
     .right-card:hover,.right-card:active{
       background-image: linear-gradient(to right, #72134b, #1d212c);
@@ -14,5 +12,9 @@
     }
   .right-card-details{
     color: ghostwhite;
-    padding: 1rem;
+    padding-left: 1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 45%;
   }

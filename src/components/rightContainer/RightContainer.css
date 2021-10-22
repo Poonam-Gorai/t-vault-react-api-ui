@@ -16,7 +16,7 @@
  width: 70%;
  margin-right: 0px;
  margin-left: auto;
- padding: 1rem;
+ padding: 2rem;
 }
 .Sample {
   font-size: 1.5rem;
@@ -98,7 +98,7 @@ cursor: pointer;
 
 .right-card{
   color: ghostwhite;
-  padding: 1rem;
+  padding: .5rem .5rem .5rem 2rem;
   font-family: Roboto;
   font-size: 1rem;
   }
