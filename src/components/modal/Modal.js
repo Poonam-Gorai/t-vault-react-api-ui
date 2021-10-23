@@ -1,17 +1,17 @@
-import { useRef } from "react"; //for reading the user input using reference
+//import { useRef } from "react"; //for reading the user input using reference
 import "./Modal.css";
 import api from "../../api/api";
 import { useDispatch } from "react-redux";
-import { createSafe } from "../../redux/createSafe/createSafe.action";
+import { useState } from "react";
+//import { createSafe } from "../../redux/createSafe/createSafe.action";
 import { reLoadsafe } from "../../redux/createSafe/createSafe.action";
 function Modal(props) {
   const dispatch = useDispatch();
 
-  //it is like a useState only and it preserve the value. No rerender
-  const safeNameInputRef = useRef();
-  const ownerInputRef = useRef();
-  const typeInputRef = useRef();
-  const descriptionInputRef = useRef();
+  const [safeNameInputRef ,setSafeNameInputRef]= useState();
+  const [ownerInputRef,setOwnerInputRef] = useState();
+  const [typeInputRef,setTypeInputRef] = useState("Personal");
+  const [descriptionInputRef,setDescriptionInputRef] = useState();
 
   function cancleHandler() {
     props.onCancel();
@@ -19,50 +19,33 @@ function Modal(props) {
 
   function submitHandler(event) {
     event.preventDefault(); //to prevent Default input
-
-    //it holds the currently added input //this is a javascript property
-    const enteredSafeName = safeNameInputRef.current.value;
-    const enteredOwner = ownerInputRef.current.value;
-    const enteredType = typeInputRef.current.value;
-    const enteredDescription = descriptionInputRef.current.value;
-
     if (
-      !enteredSafeName ||
-      !enteredOwner ||
-      !enteredType ||
-      !enteredDescription 
-    ) {
-      return alert("Please fill in all the feilds!");
-    } 
-   else if (enteredDescription.length < 10) {
+            !safeNameInputRef ||
+            !ownerInputRef ||
+            !typeInputRef ||
+            !descriptionInputRef 
+          ) {
+            return alert("Please fill in all the feilds!");
+          } 
+   else if (descriptionInputRef?.length < 10) {
       return alert("Please enter 10 characters");
     }
     
-    const modalData = {
-      safename: enteredSafeName,
-      owner: enteredOwner,
-      type: enteredType,
-      description: enteredDescription,
-      secrets: [],
-    };
-    //console.log(modalData);
-
-    //dispatch(createSafe(modalData));
     api
       .post("/", {
-        safename: enteredSafeName,
-        owner: enteredOwner,
-        type: enteredType,
-        description: enteredDescription,
+        safename: safeNameInputRef,
+        owner: ownerInputRef,
+        type: typeInputRef,
+        description: descriptionInputRef,
       })
       .then((result) => {
-        console.log("success", result);
+        //console.log("success", result);
 
         dispatch(reLoadsafe(false));
-        console.log(reLoadsafe);
+        //console.log(reLoadsafe);
       })
       .catch(function (error) {
-        console.log(error.response.data.message.code);
+        //console.log(error.response.data.message.code);
         if (error.response.data.message.code === 11000) {
           alert("Safe Name Already Exist!!");
         }
@@ -89,9 +72,10 @@ function Modal(props) {
         <input
           type="text"
           placeholder="Safe Name"
-          id="safename"
+          name="safename"
           className="Safe"
-          ref={safeNameInputRef}
+          value={safeNameInputRef} 
+          onChange={(e) => setSafeNameInputRef(e.target.value)}
           autoComplete="off"
           required
         ></input>
@@ -101,33 +85,42 @@ function Modal(props) {
         <input
           type="text"
           placeholder="Owner"
-          id="owner"
+          name="owner"
           className="Safe"
-          ref={ownerInputRef}
+          value={ownerInputRef}
+          onChange={(e) => setOwnerInputRef(e.target.value)}
           autoComplete="off"
           required
         ></input>
+
         <span className="Safename" htmlFor="type">
           Type
         </span>
-        <input
-          type="text"
+        <select
+          id=""
           placeholder="Type"
-          id="type"
+          name="type"
           className="Safe"
-          ref={typeInputRef}
+          value={typeInputRef}
+          onChange={(e) => setTypeInputRef(e.target.value)}
           autoComplete="off"
           required
-        ></input>
+        >
+          <option value="Personal" selected>Personal</option>
+            <option value="Shared">Shared</option>
+            <option value="Associates">Associates</option>
+        </select>
+
         <span className="Safename" htmlFor="description">
           Description
         </span>
         <textarea
           placeholder="Description"
-          id="description"
+          name="description"
           className="Safe"
           rows="3"
-          ref={descriptionInputRef}
+          value={descriptionInputRef}
+          onChange={(e) => setDescriptionInputRef(e.target.value)}
           required
         ></textarea>
         <span className="Safename">Please add minimum of 10 characters</span>

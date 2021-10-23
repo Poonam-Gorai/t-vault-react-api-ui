@@ -10,7 +10,7 @@ body {
   margin: 0;
   background-color: #1d212c;
 }
-@media screen and (max-width : 1360px) {
+@media screen and (max-width : 1368px) {
   html{
     font-size: 10px;
   }

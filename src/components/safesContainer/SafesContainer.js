@@ -14,6 +14,12 @@ function SafesContainer( ) {
 console.log(selectedSafe);
   // const safeList = useSelector((state) => state.createSafe.safes);
   // console.log("StfeList",safeList[0].secrets);
+  // const [selectSafe, setSelectSafe] = useState();
+  // const [renderTrigger, setRender] = useState(0);
+  // const reRender = () => {
+  //   setRender(renderTrigger + 1);
+  //   setSelectSafe({});
+  // };
   return (
     <div className="main-content">
       <div className="container">
@@ -22,6 +28,9 @@ console.log(selectedSafe);
           setSelectedSafe={setSelectedSafe}
           setcurrentIndex={setcurrentIndex}
           setSafeListName={setSafeListName}
+          // setSelectSafe={setSelectSafe}
+          //  renderTrigger={renderTrigger} 
+          //  reRender={reRender}
         />
         <RightContainer
           AddButtonDisable={AddButtonDisable}
@@ -30,6 +39,7 @@ console.log(selectedSafe);
           setSelectedSafe={setSelectedSafe}
           currentIndex={currentIndex}
           safeListName={safeListName}
+          // selectSafe={selectSafe} renderTrigger={renderTrigger} reRender={reRender}
           
         />
       </div>

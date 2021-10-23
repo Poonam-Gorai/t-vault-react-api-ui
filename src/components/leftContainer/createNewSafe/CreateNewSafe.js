@@ -34,15 +34,18 @@ const[activeSafeId,setactiveSafeId] = useState(0);
     setAddButtonDisable((prevState) => !prevState);
   };
   const onDelete = (_id) => {
-    //dispatch(deleteItem(index));
-    console.log("id is", _id);
+
+   // dispatch(deleteItem(index));
+    //console.log("id is", _id);
     api
       .delete(`/${_id}`)
       .then((result) => {
+        setSelectedSafe({})
+        //console.log("create-success", result.data.secrets);
         dispatch(reLoadsafe(false));
       })
       .catch((error) => {
-        console.log(error.responce);
+        console.log(error.response);
       });
   };
   return (

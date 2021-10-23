@@ -59,19 +59,16 @@ function RightContainer({
           
             {safeListName?.length === 0 && (
               <><div className="safe-Content">
-                <span className="Sample">No Safes Created yet</span>
+                <p className="Sample">No Safes Created yet</p>
                 <p className="content">
-                  A Safe is a logical unit to store the secrets. All the safes
-                  are created within Vault. You can control access only at the
-                  safe level. As a vault administrator you can manage safes but
-                  cannot view the content of the safe.
+                Create a Safe to see your secrets, folders and permissions here
                 </p>
                 </div>
               </>
             )}
             {safeListName?.length !== 0 && (
               <><div className="safe-Content2">
-                <span className="Sample">{selectedSafe?.safename}</span>
+                <p className="Sample">{selectedSafe?.safename}</p>
                 <p className="content">
                   {selectedSafe?.description}
                 </p></div>

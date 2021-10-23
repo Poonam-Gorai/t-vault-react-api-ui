@@ -1,18 +1,26 @@
 .left-container {
   position: relative;
   height: calc(100% - 4rem);
-  overflow-y: scroll;
 }
-.left-container::-webkit-scrollbar {
+.safeScroll::-webkit-scrollbar {
   display: none;
 }
-
+.safelist{
+  height: 100%;
+}
+.safeScroll{
+  overflow-y: scroll;
+  height: 100%;
+}
 .Group
 {
-  padding: 3rem;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  display: flex;
+  width: 16rem;
+  justify-content: center;
+  height: 19rem;
+  position: absolute;
+  top: 2rem;
+  left: 7rem;
 }
 .Group_none{
   display: none;
@@ -49,4 +57,79 @@
     justify-content: center;
     align-items: center;
     gap: 1rem;
+}
+@media screen and (max-width: 1440px) {
+  .Group{
+  display: flex;
+  width: 16rem;
+  justify-content: center;
+  height: 19rem;
+  position: absolute;
+  top: 2rem;
+  left: 6rem;
+}
+}
+@media screen and (max-width: 1368px) {
+  .Group{
+  display: flex;
+  width: 16rem;
+  justify-content: center;
+  height: 19rem;
+  position: absolute;
+  top: 11rem;
+  left: 15rem;
+}
+
+}
+@media screen and (max-width: 1277px) {
+  .Group{
+  display: flex;
+  width: 16rem;
+  justify-content: center;
+  height: 19rem;
+  position: absolute;
+  top: 11rem;
+  left: 14rem;
+}
+
+}
+@media screen and (max-width: 1200px) {
+  .Group{
+  display: flex;
+  width: 16rem;
+  justify-content: center;
+  height: 19rem;
+  position: absolute;
+  top: 11rem;
+  left: 12rem;
+}
+
+}
+@media screen and (max-width: 1100px) {
+  .Group{
+  display: flex;
+  width: 16rem;
+  justify-content: center;
+  height: 19rem;
+  position: absolute;
+  top: 11rem;
+  left: 10rem;
+}
+
+}
+@media screen and (max-width: 1100px) {
+  .Group{
+  left: 8rem;
+}
+}
+@media screen and (max-width: 913px) {
+  .Group{
+  left: 7rem;
+}
+}
+@media screen and (max-width: 913px) {
+  .Group{
+    top: 27rem;
+  left: 14rem;
+}
 }
