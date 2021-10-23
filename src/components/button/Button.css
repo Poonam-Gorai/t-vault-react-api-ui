@@ -8,6 +8,9 @@
 .plus {
   color: white;
   font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  align-content: center;
 }
 .plus:hover{
     cursor: pointer;

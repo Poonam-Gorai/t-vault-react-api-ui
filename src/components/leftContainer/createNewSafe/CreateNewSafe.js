@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 import React, { useState } from "react";
 import Card from "./card";
-import { deleteItem } from "../../../redux/createSafe/createSafe.action";
+//import { deleteItem } from "../../../redux/createSafe/createSafe.action";
 import { reLoadsafe } from "../../../redux/createSafe/createSafe.action";
 import { useEffect } from "react";
 import api from "../../../api/api";
@@ -34,7 +34,7 @@ const[activeSafeId,setactiveSafeId] = useState(0);
     setAddButtonDisable((prevState) => !prevState);
   };
   const onDelete = (_id) => {
-
+console.log(setcurrentIndex)
    // dispatch(deleteItem(index));
     //console.log("id is", _id);
     api
@@ -43,6 +43,7 @@ const[activeSafeId,setactiveSafeId] = useState(0);
         setSelectedSafe({})
         //console.log("create-success", result.data.secrets);
         dispatch(reLoadsafe(false));
+        
       })
       .catch((error) => {
         console.log(error.response);
