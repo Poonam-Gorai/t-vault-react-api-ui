@@ -5,12 +5,12 @@ import { MenuList } from "./MenuList";
 
 function MainNavigation() {
   const location = useLocation();
-  console.log(location.pathname);
+  //console.log(location.pathname);
 
   const menuList = MenuList.map(({ url, title, test }, index) => {
-    console.log(index);
-    console.log(url);
-    console.log(location.pathname === url);
+    //console.log(index);
+    //console.log(url);
+    //console.log(location.pathname === url);
     return (
       <li
         key={index}

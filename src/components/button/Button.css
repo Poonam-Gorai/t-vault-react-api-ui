@@ -25,3 +25,7 @@
   right: 8%;
   bottom: 8%;
 }
+@media screen and (max-width: 1368px){
+.btn {
+    padding: 11px 15px;
+}}

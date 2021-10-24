@@ -80,6 +80,7 @@ function RightContainer({
         <div className="secret-content">
           <ul className="secrets">
             <li>Secrets</li>
+            
             <li disabled={AddButtonDisable} onClick={() => handelClick()}>
               {" "}
               <img src={Folder} alt="folder"></img>
@@ -138,6 +139,7 @@ function RightContainer({
                 </button>
               </div>
             )}
+            {/* need to check with the data so .safename */}
             {!selectedSafe?.safename && (
               <div className="img-content">
                 <img

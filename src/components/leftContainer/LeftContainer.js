@@ -30,12 +30,12 @@ function LeftContainer({
   const isReloaded = useSelector((state) => state.createSafe.isReloaded);
   const dispatch = useDispatch();
   useEffect(() => {
-    console.log("use effect working", isReloaded);
+    //console.log("use effect working", isReloaded);
     setloading(true);
     api
       .get("/")
       .then((result) => {
-        console.log("success", result);
+        //console.log("success", result);
         dispatch(reLoadsafe(true));
         setloading(false);
         setSafeList(result.data);
@@ -56,7 +56,7 @@ function LeftContainer({
 
   const filterSafe = () => {
     const searchText = inputRef?.current.value;
-    console.log(searchText);
+    //console.log(searchText);
     setSearchTerm(searchText);
     if (searchText !== "") {
       const newAllSafes = safeData.filter((item) => {

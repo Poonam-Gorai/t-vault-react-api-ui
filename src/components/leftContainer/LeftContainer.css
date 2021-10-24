@@ -58,24 +58,16 @@
     align-items: center;
     gap: 1rem;
 }
-@media screen and (max-width: 1440px) {
+ @media screen and (max-width: 1440px) {
   .Group{
-  display: flex;
-  width: 16rem;
-  justify-content: center;
-  height: 19rem;
-  position: absolute;
+  
   top: 2rem;
   left: 6rem;
 }
 }
 @media screen and (max-width: 1368px) {
   .Group{
-  display: flex;
-  width: 16rem;
-  justify-content: center;
-  height: 19rem;
-  position: absolute;
+ 
   top: 11rem;
   left: 15rem;
 }
@@ -83,11 +75,7 @@
 }
 @media screen and (max-width: 1277px) {
   .Group{
-  display: flex;
-  width: 16rem;
-  justify-content: center;
-  height: 19rem;
-  position: absolute;
+  
   top: 11rem;
   left: 14rem;
 }
@@ -95,11 +83,7 @@
 }
 @media screen and (max-width: 1200px) {
   .Group{
-  display: flex;
-  width: 16rem;
-  justify-content: center;
-  height: 19rem;
-  position: absolute;
+  
   top: 11rem;
   left: 12rem;
 }
@@ -107,11 +91,6 @@
 }
 @media screen and (max-width: 1100px) {
   .Group{
-  display: flex;
-  width: 16rem;
-  justify-content: center;
-  height: 19rem;
-  position: absolute;
   top: 11rem;
   left: 10rem;
 }
