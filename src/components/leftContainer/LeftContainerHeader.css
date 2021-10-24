@@ -4,6 +4,7 @@
     padding: 1rem;
     height: 4rem;
     justify-content: space-between;
+    border-bottom: solid 1px #2a2e3e;
 }
 .allsafe{
     color: white;
