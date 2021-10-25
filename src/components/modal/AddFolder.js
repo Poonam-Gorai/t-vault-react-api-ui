@@ -21,13 +21,13 @@ const AddFolder = ({
     setshowAddFolder((prev) => !prev);
   };
   const saveForm = () => {
-    console.log("str", name);
-    console.log("secrets", secrets);
+    //console.log("str", name);
+    //console.log("secrets", secrets);
 
     api
       .patch(`/secrets/${selectedSafe._id}`, { secrets: name })
       .then((result) => {
-        console.log("success", result);
+        //console.log("success", result);
         dispatch(reLoadsafe(false));
         console.log(reLoadsafe);
       })

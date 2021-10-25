@@ -1,5 +1,5 @@
 .btn {
-  padding: 10px 15px;
+  padding: 20px 25px;
   border-radius: 50%;
   border: none;
   background-image: linear-gradient(to top, #ff61b2, #e20074, #650038);
@@ -17,8 +17,8 @@
 }
 .btn-size{
   position: absolute;
-  right: 46%;
-  bottom: 24%;
+  right: 45%;
+  bottom: 20%;
 }
 .btn-size-2{
   position: absolute;
