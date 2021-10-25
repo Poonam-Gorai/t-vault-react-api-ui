@@ -2,6 +2,7 @@ import "./LeftContainer.css";
 import "./LeftContainerHeader.css";
 import Button from "../button/Button";
 import Group from "../../assets/Group_safe.png";
+import SearchIcon from "../../assets/icon_search.png";
 //import Loader from "../../assets/loading.gif";
 import "../search/Search.css";
 import { useDispatch } from "react-redux";
@@ -76,14 +77,16 @@ if(loading){
     <div className="left-img-content">
       <header className="left-container-header">
         <span className="allsafe">All Safes ({safeListLength.length})</span>
-        <input
+        <div className="search-box">
+        <img src={SearchIcon} alt="search" className="search-icon" />
+          <input
           ref={inputRef}
           type="text"
           placeholder="&nbsp;Search.."
           className="search"
           value={searchTerm}
           onChange={filterSafe}
-        />
+        /></div>
       </header>
       <div className="left-container"><div className="container-loading"><div className="loading"></div></div></div></div>
   )
@@ -93,6 +96,8 @@ if(loading){
     <div className="left-img-content">
       <header className="left-container-header">
         <span className="allsafe">All Safes ({safeListLength.length})</span>
+        <div className="search-box">
+        <img src={SearchIcon} alt="search" className="search-icon" />
         <input
           ref={inputRef}
           type="text"
@@ -100,7 +105,7 @@ if(loading){
           className="search"
           value={searchTerm}
           onChange={filterSafe}
-        />
+        /></div>
       </header>
       <div className="left-container">
         <div className="safeScroll">
