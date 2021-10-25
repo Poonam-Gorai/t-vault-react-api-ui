@@ -40,6 +40,9 @@ function RightContainer({
   const handelClick = () => {
     setshowAddFolder((prev) => !prev);
     setAddButtonDisable((prevState) => !prevState);
+    if(!selectedSafe?.safename){
+      setshowAddFolder();
+    }
   };
   return (
     <>
@@ -116,7 +119,7 @@ function RightContainer({
                 </button>
               </div>
             )}
-            {secrets?.length !== 0 && (
+            {/* {secrets?.length !== 0 && (
               <div className="img-content-none">
                 <img
                   src="./assets/Group.png"
@@ -138,7 +141,7 @@ function RightContainer({
                   + Add
                 </button>
               </div>
-            )}
+            )} */}
             {/* need to check with the data so .safename */}
             {!selectedSafe?.safename && (
               <div className="img-content">

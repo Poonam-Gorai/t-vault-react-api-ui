@@ -4,8 +4,8 @@ import SearchIcon from "../../assets/icon_search.png";
 
 function Search({ searchQuery, onQuery }) {
   return (
-    <div className="search-box">
-      <img src={SearchIcon} alt="search" className="search-icon" />
+    <div>
+      {/* <img src={SearchIcon} alt="search" className="search-icon" /> */}
       <input
         type="text"
         placeholder="&nbsp;Search.."

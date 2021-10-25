@@ -33,7 +33,7 @@ console.log(safeList);
       )}
        {safeData?.length !== 0 && ( 
         <div className="btn-size-2">
-          <button className="btn" onClick={ModalHandler}>
+          <button className="btn2" onClick={ModalHandler}>
             <span className="plus">+</span>
           </button>
           {modalIsOpen && <Modal onCancel={closeModalHandler} />}

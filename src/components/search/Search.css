@@ -6,8 +6,14 @@
     border: none;
     padding-left: 1rem;
 }
-.search-box{
-    background: #20232e;
+/* .search-box{
+    background-color: #20232e;
     padding: .3rem 1rem;
     align-items: center;
+    height: 10rem;
+    width: 10rem;
 }
+.search-icon{
+    height: 2rem;
+    width: 2rem;
+} */

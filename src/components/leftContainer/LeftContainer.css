@@ -12,7 +12,17 @@
   overflow-y: scroll;
   height: 100%;
 }
-.Group
+.safe-img{
+  background-image: url("../../assets/Group_safe.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  height: calc(100% - 5rem);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+}
+/* .Group
 {
   display: flex;
   width: 16rem;
@@ -24,7 +34,7 @@
 }
 .Group_none{
   display: none;
-}
+} */
 .left-img-content{
   width: 40%;
   height: 100%;
@@ -58,61 +68,8 @@
     align-items: center;
     gap: 1rem;
     position: absolute;
-    top: 30%;
+    top: 40%;
     left: 45%;
 
 }
- @media screen and (max-width: 1440px) {
-  .Group{
-  
-  top: 2rem;
-  left: 6rem;
-}
-}
-@media screen and (max-width: 1368px) {
-  .Group{
  
-  top: 11rem;
-  left: 15rem;
-}
-
-}
-@media screen and (max-width: 1277px) {
-  .Group{
-  
-  top: 11rem;
-  left: 14rem;
-}
-
-}
-@media screen and (max-width: 1200px) {
-  .Group{
-  
-  top: 11rem;
-  left: 12rem;
-}
-
-}
-@media screen and (max-width: 1100px) {
-  .Group{
-  top: 11rem;
-  left: 10rem;
-}
-
-}
-@media screen and (max-width: 1100px) {
-  .Group{
-  left: 8rem;
-}
-}
-@media screen and (max-width: 913px) {
-  .Group{
-  left: 7rem;
-}
-}
-@media screen and (max-width: 913px) {
-  .Group{
-    top: 27rem;
-  left: 14rem;
-}
-}

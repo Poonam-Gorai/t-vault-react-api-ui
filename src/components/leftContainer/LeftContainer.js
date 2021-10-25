@@ -115,18 +115,16 @@ if(loading){
               safeData={safeData}
             />
           )}
-        </div>
-        </div>
-        {safeData.length === 0 && (
-          <>
-            <img src={Group} className="Group" alt="groupimg" />
+          {safeData.length === 0 && (
+          <div className="safe-img">
+            {/* <img src={Group} className="Group" alt="groupimg" /> */}
             <Button safeData={safeData} />
-          </>
+          </div>
         )}
-
+        </div>
+        </div>
         {safeData.length !== 0 && (
           <>
-            <img src={Group} className="Group_none" alt="groupimg" />
             <Button />
           </>
         )}

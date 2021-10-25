@@ -93,8 +93,7 @@ cursor: pointer;
   color: #f2f2f2;
 }
 .addButton{
-  width: 5rem;
-  padding: .5rem;
+  padding: .5rem 1rem;
   background-color: #454c5e;
   color: #fff;
   cursor: pointer;
